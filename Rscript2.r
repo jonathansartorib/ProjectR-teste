@@ -170,4 +170,90 @@ candidato1 candidato2
 > ##OU SEJA ELE CALCULOU A VOTACAO##
 
 
-##unidade 4##
+> ##UNIDADE 4##
+
+> 
+> ##MANIPULAÇÃO DE DADOS##
+> 
+> ##IMPORTAR ARQUIVO DO EXECL COMO EXEMPLO##
+> 
+> library(readxl)
+> pagamento <- read_excel("C:/Users/jonat/Downloads/pagamento.xls")
+
+> ##UTILIZAR A FUNÇÃO SELECT##
+> 
+> ##PARA UTILIZAR PRECISAMOS DA PACKAGE (DPLYR)##
+> 
+> library(dplyr)
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+> ##no exemplo da planilha dele tem:##
+> ##valor, regiao, notas, cidades##
+> 
+> ##vai selecionar valor e regiao##
+> 
+> resul <- pagto %>% select(valor, regiao)
+Error in select(., valor, regiao) : object 'pagto' not found
+> ##object pagto, foi uma variavel importada do excel##
+> 
+> view(resul)
+Error in view(resul) : could not find function "view"
+> ##Mostra os resul em tabela das variaveis que ele tem)
+
+> ##ordenar dados da tabela##
+> 
+> resul <- pagto %>% select(Valor, Regiao) %>% filter(valor>100)
+Error in select(., Valor, Regiao) : object 'pagto' not found
+> ##resultado mostra as notas maiores que 1000##
+> 
+> ##criar ou modificar colunas##
+> ##Mutate##
+> 
+> resul <- pagto %>% select(Valor, Regiao) %>% mutate(pix = (Valor * 0.135))
+Error in select(., Valor, Regiao) : object 'pagto' not found
+> view(resul)
+Error in view(resul) : could not find function "view"
+> ##mostrou as tabelas com o valor das multiplicacoes##
+> 
+> ##summarise e group_by##
+> 
+> resul <- pagto %>% select(valor, regiao, nrnota, prestador) %>% group_by(regiao) %>% summarise((total = mean(valor)))
+Error in select(., valor, regiao, nrnota, prestador) : 
+  object 'pagto' not found
+> view(resul)
+Error in view(resul) : could not find function "view"
+> ##Mostrou a media do agrupamento##
+> 
+> resul <- pagto %>% select(nrnota, valor, prestador,regiao) %>% count(regiao)
+Error in select(., nrnota, valor, prestador, regiao) : 
+  object 'pagto' not found
+> view(resul)
+Error in view(resul) : could not find function "view"
+> ##count = mostrou a recorrencia
+> 
+> 
+> ##ORDENAÇÃO##
+> 
+> ##ARRANGE##
+> 
+> pagto %>% arrange(prestador)
+Error in arrange(., prestador) : object 'pagto' not found
+> ##ordena do maior para o menos
+> 
+> pagto %>% arrange(desc(prestador))
+Error in arrange(., desc(prestador)) : object 'pagto' not found
+> ##ordenou do menor para o maior##
+> 
+
+##UNIDADE 5 ##
+
+
