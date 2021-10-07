@@ -129,11 +129,28 @@ options("getSymbols.warning4.0"=FALSE). See ?getSymbols for details.
 > ##ou seja quanto expressivo é a palavra dentro do texto##
 > 
 > ##criar variavel##
-> > library(readr)
+> library(readr)
 > UNIDADE1 <- read_csv("C:/Users/jonat/Desktop/FACULDADE/MATEMATICA APLICADA/UNIDADE1.pdf")
-Rows: 21711 Columns: 1
+Rows: 21711 Columns: 1                                                                                                                                                                       
+-- Column specification ----------------------------------------------------------------------------------------------------------------------------------
+Delimiter: ","
+chr (1): %PDF-1.3
+
+i Use `spec()` to retrieve the full column specification for this data.
+i Specify the column types or set `show_col_types = FALSE` to quiet this message.
+> View(UNIDADE1)
 ##criado variavel unidade1 importando pdf##
 
-##parei em 8 minutos da aula 6##
+> file_location <- ("C:/Users/jonat/Desktop/FACULDADE/MATEMATICA APLICADA/UNIDADE1.pdf")
+
+##Apos instalado varias bibliiotecas
+
+##Foi modificando o arquivo pdf e etc, muito chato
+
+##Pesquisar numero de ocorrencias das palavras e etc
+
+##Plotou o grafico wordcloud para a frequencia de palavras
+
+##
 
 
